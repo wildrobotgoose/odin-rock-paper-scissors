@@ -1,17 +1,21 @@
 function getComputerChoice() {
     const r = 3 * Math.random();
     if (r < 1) {
-        return "rock";
+        return "Rock";
     }
     else if (r < 2) {
-        return "paper";
+        return "Paper";
     }
     else {
-        return "scissors";
+        return "Scissors";
     }
+}
+
+function capitalizeFirstLetter(text) {
+    return text.substring(0, 1).toUpperCase() + text.substring(1);
 }
 
 function getHumanChoice() {
     const choice = prompt("Enter choice: ");
-    return choice.toLowerCase();
+    return capitalizeFirstLetter(choice.toLowerCase());
 }
