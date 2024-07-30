@@ -22,3 +22,42 @@ function getHumanChoice() {
 
 let humanScore = 0;
 let computerScore = 0;
+
+function computeRoundResult(humanChoice, computerChoice) {
+    if (humanChoice == computerChoice) {
+        return "tie";
+    }
+    else if (humanChoice == "Rock" && computerChoice == "Paper") {
+        return "lose";
+    }
+    else if (humanChoice == "Paper" && computerChoice == "Scissors") {
+        return "lose";
+    }
+    else if (humanChoice == "Scissors" && computerChoice == "Rock") {
+        return "lose";
+    }
+    else {
+        return "win";
+    }
+}
+
+function playRound(humanChoice, computerChoice) {
+    const roundResult = computeRoundResult(humanChoice, computerChoice);
+
+    if (roundResult == "tie") {
+        console.log(`You tie!  ${humanChoice} ties ${computerChoice}.`);
+    }
+    else if (roundResult == "lose") {
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+        computerScore++;
+    }
+    else {
+        console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+        humanScore++;
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
