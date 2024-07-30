@@ -19,3 +19,6 @@ function getHumanChoice() {
     const choice = prompt("Enter choice: ");
     return capitalizeFirstLetter(choice.toLowerCase());
 }
+
+let humanScore = 0;
+let computerScore = 0;
